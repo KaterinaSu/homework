@@ -1,0 +1,14 @@
+class Play(object):
+    def __init__ (self, player, CARDS, card):
+        self.player = player
+        self.CARDS = CARDS
+        self.card = card
+
+import random
+import itertools
+SUITS = 'cdhs'
+RANKS = '23456789TJQKA'
+CARDS = tuple(''.join(card) for card in itertools.product(RANKS, SUITS)) #itertools.product - аналог вложенных циклов
+
+player = random.sample(CARDS, 6)
+print (player)
